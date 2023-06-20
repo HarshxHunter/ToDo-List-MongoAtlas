@@ -13,10 +13,11 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://127.0.0.1:27017/todolistDB")
+mongoose.connect("mongodb+srv://KairaHarsh:harshpassword@cluster0.ytpgq8m.mongodb.net/todolist?retryWrites=true&w=majority")
     .then(()=> console.log('Connected.'));
 
-    
+// use "mongodb://127.0.0.1:27017/todolistDB" to connect to your local db
+
 const itemsSchema = new mongoose.Schema({
   name: String
 });
@@ -156,4 +157,3 @@ app.listen(3000, function() {
 });
 
 
-// mongodb+srv://KairaHarsh:harshpassword@cluster0.ytpgq8m.mongodb.net/todolist?retryWrites=true&w=majority
